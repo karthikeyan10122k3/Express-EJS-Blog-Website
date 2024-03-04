@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/index.css">
+  <title>Bloggers</title>
+</head>
+<body>
+  <%- include("layout/header.ejs") %>
+
+  
+    <% if (logged === false) { %>
+      <section class="get-started ">
+        <div class="container ">
+          <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center shadow-lg  p-4 write-blog">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+              <h2 class=" fw-bold lh-1 text-body-emphasis">Bloggers, for Blog Writers</h2>
+              <p class="lead">For aspiring bloggers and seasoned writers alike, this platform offers a space tailored specifically for blog writers, providing valuable resources, community support, and opportunities for growth.</p>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                <a href="/signup"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Get Started</button></a>
+              </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden pb-5">
+                <img class="rounded-lg-3" src="images/bloggers-image.jpg" alt="bloggers image" height="250" width="300">
+            </div>
+          </div>
+        </div>
+      </section>
+     
+    <% }else{ %> 
+      <div class="container  write-blog p-4">
+        <h2 class="fw-bold lh-1 text-body-emphasis">Discover Your Voice: Empowerment through Blogging</h2>
+        <p class="lead">Express yourself and your passions through the power of blogging" encourages individuals to share their interests, experiences, and thoughts with others through blogging. It's an invitation to use blogging as a creative outlet to communicate what inspires and drives them. By doing so, they can connect with like-minded individuals and contribute to meaningful conversations online.</p>
+        <div class="text-center">
+            <a href="/writeBlog"><button type="button" class="btn btn-info">Create Your Blog</button></a>
+        </div>
+    </div>
+    
+      <% } %>
+    
+  <%- include("popular-blogs.ejs") %>
+
+  <%- include("more-blogs.ejs") %>
+
+  <%- include("features.ejs") %>
+
+  <%- include("layout/footer.ejs") %>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
